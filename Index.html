@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="TopBar">
+	    <div class="dropdown">
+	        <button class="dropbtn">Menu</button>
+	        <div class="dropdown-content">
+	            <a href="https://app.mediafire.com">Mediafire</a>
+	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
+	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
+	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
+
+
+	        </div>
+	    </div>
+    </div>
+    
+    <div class="Center">
+        <form onsubmit="search()">
+            <input class="SearchBar" type="text" id="Search" autofocus required><input style="display:none;" type="submit">
+        </form>
+        
+    </div>
+
+<script>
+SBVal=document.getElementsByClassName("SearchBar")[0]
+function search(){window.open("https://google.com/search?q="+SBVal.value)}
+</script>
+</body>
+</html>
