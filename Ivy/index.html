@@ -41,7 +41,7 @@ select{color:white;background-color:#555;border-radius:5px;}
 </style>
 
 <script type="text/javascript">
-fetch("https://05kari.neocities.org/cfg.json")
+fetch("cfg.json")
   .then((response) => response.json())
     .then(json=>Create(json))
   .catch((err) => alert("couldn't get versions. "+err));
