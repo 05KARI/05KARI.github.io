@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Ivy</title>
+  </head>
+  <body>
+    <a class="download" href="#" download>Download Ivy</a>
+    <p style="position:absolute;right:20px;bottom:20px;color:white;">Made By <a href="#">05KARI</a></p>
+    
+    <div style="position:absolute;bottom:20px;left:20px;color:white;padding:15px;">
+      <a href="change_log">version:</a>
+      
+      <select onchange="alert(this.value)" disabled></select>
+    </div>
+
+</body>
+</html>
+
+<style type="text/css">
+html{height:100%;overflow:hidden;}
+body{background-color:#222;display:flex;align-items:center;justify-content:center;height:100%;}
+
+.download{
+font-size:25px;
+background-color:#00b388;
+padding:20px;
+border:2px solid black;
+border-radius:10px;
+transition:0.2s ease-out;
+}
+.download:hover{
+padding:24px;
+border:2px solid #333;
+}
+.download:active{transform:scale(0.94);}
+a,p{user-select:none;}
+a{color:white;text-decoration:none;}
+select{color:white;background-color:#555;border-radius:5px;}
+</style>
+
+<script type="text/javascript">
+fetch("https://05kari.neocities.org/cfg.json")
+  .then((response) => response.json())
+    .then(json=>Create(json))
+  .catch((err) => alert("couldn't get versions. "+err));
+  
+function Create(data){
+document.querySelector(".download").href=data[0].link;
+sel=document.querySelector("select")
+data.forEach(v=>{
+opt=document.createElement("option")
+opt.innerHTML=v.version
+opt.value=v.link
+sel.appendChild(opt)
+})
+}
+</script>
