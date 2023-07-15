@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Homepage</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="TopBar">
-	    <div class="dropdown">
-	        <button class="dropbtn">Menu</button>
-	        <div class="dropdown-content">
-	            <a href="https://app.mediafire.com">Mediafire</a>
-	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
-	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
-	            <a href="">Test</a><a href="">Test</a><a href="">Test</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>05KARI's projects</title>
+  </head>
+  
+  <!--<a href="https://05kari.github.io/Ivy">Ivy Injector</a>
+  <a href="https://05kari.github.io/Ivy">Ivy Injector</a>-->
+  
+  <body>
 
-
-	        </div>
-	    </div>
-    </div>
-    
-    <div class="Center">
-        <form onsubmit="search()">
-            <input class="SearchBar" type="text" id="Search" autofocus required><input style="display:none;" type="submit">
-        </form>
-        
-    </div>
-
-<script>
-SBVal=document.getElementsByClassName("SearchBar")[0]
-function search(){window.open("https://google.com/search?q="+SBVal.value)}
-</script>
-</body>
+  </body>
 </html>
+
+<style type="text/css">
+html{height:100%;overflow:hidden;}
+body{background-color:#555;text-align:center;}
+
+a{
+color:white;
+background-color:#333;
+padding:10px;
+border-radius:10px;
+text-align:center;
+display:inline-block;
+width:90%;
+max-width:400px;
+border:1px solid #000;
+margin:10px 0;
+}
+*{font-family:Arial,sans-serif;}
+.container{width:100%;margin:0;display:block;}
+</style>
+<script src=data.js" type="text/javascript"></script>
+<script type="text/javascript">
+function Get(obj){return document.querySelector(obj)}
+
+json.forEach(data=>{
+a=document.createElement("a")
+a.innerHTML=data.text;
+a.href=data.dest;
+a.target=data.new?"_blank":"";
+
+box=document.createElement("div");
+box.class="container";
+box.appendChild(a)
+document.body.appendChild(box);
+})
+
+Get("script").remove();
+</script>
