@@ -1,10 +1,51 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ivy Change Log</title>
+    <title>change log :D</title>
   </head>
-  <body>
-
-  </body>
+  <body></body>
 </html>
+
+<style type="text/css">
+html{height:100%;overflow:scroll;}
+body{background-color:#555;text-align:center;}
+details summary ~ *{text-align:left;}
+.version{
+color:white;
+background-color:#333;
+padding:10px;
+border-radius:10px;
+text-align:center;
+display:inline-block;
+width:90%;
+max-width:400px;
+border:1px solid #000;
+margin:10px 0;
+box-shadow:-2px 2px 0px #888;
+}
+*{font-family:Arial,sans-serif;}
+a{color:silver;}
+.container{width:100%;margin:0;display:block;text-align:center;}
+hr{background-color:white;border:1px solid white;border-radius:25px;}
+</style>
+
+<script type="text/javascript">
+function Get(obj){return document.querySelector(obj)}
+json=[
+//{text:"version 1.0",log:"<h2>current features:</h2><h3>inject button:</h3><p>- click to inject horion</p>"}
+{text:"version 1.0",id:"1-0",log:"<dl><dt>inject button:</dt><dd>- [left click]: inject horion</dd><dd>- [right click]: inject downloaded dll</dd><dt>&#10005; button:</dt><dd>- [left click]: quit app</dd><dd>- [right click]: minimize window</dd><dt>version:</dt><dd>- [left click]: goto download page</dd><dd>if version looks like this: <span style='color:yellow;'>v1.0 > v1.1</span> there is a new version available</dd></dl>"}
+]
+
+json.forEach(data=>{
+const version=document.createElement("details");
+version.id=data.id;
+version.className="version";
+version.innerHTML="<summary>"+data.text+"</summary><hr>"+data.log;
+const box=document.createElement("div");
+box.className="container";
+box.appendChild(version)
+document.body.appendChild(box);
+})
+</script>
