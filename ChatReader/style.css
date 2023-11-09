@@ -59,4 +59,4 @@ width: 95%;float: left;}
 width: 95%;float: right;}
 .RoleError, .Roleerror{background-color: #c80000;border-radius: 10px;
 width: 100%;float:inline-start;}
-.Rolesystem{background-color: #00bfff; width: 100%;float: inline-start;}
+.Rolesystem{background-color: #00bfff; margin-top: 0; padding-right: 25px; width: 100%;float: inline-start;}
