@@ -12,8 +12,7 @@ function CreateMessages(data){
   MessageList=document.querySelector("div#Holder");
   Messages.innerHTML="";
   data.forEach(e=>{
-    classes="class=\"Message Role"+e.Role+"\"";
-    console.log(e.Role+" says: "+e.Content)
+    classes=`class="Message Role${e.Role}"`;
     Messages.innerHTML+=`<p title="${e.Role}" ${classes}>${e.Content}</p>`;
   });
   MessageList.style.display="block";
