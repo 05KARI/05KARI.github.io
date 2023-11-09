@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js"></script>
+  <title>Chat Reader</title>
+</head>
+  <body>
+    <div class="FileSelect">
+      <input class="File" type="file" onchange="ReadFile(this.files);this.value=null;">
+      <h2 class="Label">Drag and drop a file or click to select</h2>
+    </div>
+
+    <div id="Holder">
+      <div class="CloseBtn" onclick="this.parentElement.style.display='none'">&#x2716;</div>
+      <div id="Messages">
+
+      </div>
+    </div>
+  </body>
+</html>
