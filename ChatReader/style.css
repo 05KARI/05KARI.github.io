@@ -57,6 +57,6 @@ font-family: Arial, Helvetica, sans-serif;}
 width: 95%;float: left;}
 .Roleassistant{background-color: #90ee90;border-radius: 10px 0 0 10px;
 width: 95%;float: right;}
-.RoleError, .Roleerror{background-color: #c80000;border-radius: 10px;
+.RoleError, .Roleerror, .Rolefunction{background-color: #c80000;border-radius: 10px;
 width: 100%;float:inline-start;}
 .Rolesystem{background-color: #00bfff; margin-top: 0; padding-right: 25px; width: 100%;float: inline-start;}
