@@ -8,7 +8,7 @@ function Get(obj){return document.querySelector(obj)}
 json.forEach(data=>{
 a=document.createElement("a")
 a.innerHTML=data.text;
-a.title="data.title";
+a.title=data.title;
 a.href=data.dest;
 a.target=data.new?"_blank":"";
 
