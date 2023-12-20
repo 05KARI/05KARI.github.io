@@ -1,6 +1,6 @@
 json=[
-  {"text":"Ivy Injector", "DLL injector for minecraft: bedrock edition","dest":"https://05kari.github.io/Ivy","new":true},
-  {"text":"ChatReader","title":"a reader for unity chatGPT chatlog","dest":"/ChatReader","new":true}
+  {"text":"Ivy Injector", "title":"DLL injector for minecraft: bedrock edition", "dest":"https://05kari.github.io/Ivy", "new":true},
+  {"text":"ChatReader", "title":"a reader for unity chatGPT chatlog", "dest":"/ChatReader", "new":true}
 ]
 
 function Get(obj){return document.querySelector(obj)}
