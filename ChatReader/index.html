@@ -1,19 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="javascript.js"></script>
+  <script src="javascript.js" defer></script>
   <title>Chat Reader</title>
 </head>
   <body>
+    <!--<img onmouseup="toggleSettings()" src="./icons/bookmark.svg" alt="saved" class="saved">-->
+    <img onmouseup="toggleSettings('.settingsMenu')" src="./icons/settings.svg" alt="settings" class="settings">
+    <div class="settingsMenu" name="closed">
+      <div class="settingsContainer">
+        <button data="default" name="--holder-height" onmouseup="ChangeSetting(this)">panel height: </button>
+        <button data="default" name="--holder-width" onmouseup="ChangeSetting(this)">panel width: </button>
+        <button data="10px" name="--message-gap" onmouseup="ChangeSetting(this)">message gap: </button>
+      </div>
+    </div>
     <div class="FileSelect">
       <input class="File" type="file" onchange="ReadFile(this.files);this.value=null;">
       <h2 class="Label">Drag and drop a file or click to select</h2>
     </div>
 
-    <div id="Holder" ondragover="this.style.display='none'">
-      <div class="CloseBtn" onclick="this.parentElement.style.display='none'">&#x2716;</div>
+    <div id="Holder" ondragover="SetVisible(false)">
+      <div class="CloseBtn" onclick="SetVisible(false)">&#x2716;</div>
       <div id="Messages">
 
       </div>

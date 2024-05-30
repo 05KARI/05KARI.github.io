@@ -1,42 +1,68 @@
+html,body{height: 100%;margin: 0;padding: 0;}
 body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #5f9ea0;
-  height: 100%;
   overflow: hidden;
+
+  --s: 160px; /* control the size*/
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+  
+  background:
+    repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+     calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+    repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+  background-size: var(--s) calc(var(--s)*0.577);
 }
 
 .FileSelect{
-  width: 60%;
-  height: 60%;
-  background-color: #add8e6;
+  width: var(--holder-width);
+  max-width: 100%;
+  min-width: 200px;
+  height: var(--holder-height);
+  max-height: 100%;
+  min-height: 200px;
+  background-color: #395a66aa;
+  backdrop-filter: blur(5px);
+  color: #ccc;
   border-radius: 10px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 15px #000;
+  transition: 500ms ease-in-out;
 }
+
 .File{position: absolute;
   top: 0;right: 0;
   left: 0;bottom: 0;
   opacity: 0;
+  cursor: pointer;
 }
 
 .Label{font-family: Arial, Helvetica, sans-serif;padding: 0 10px;text-align: center;}
-  
+
 #Holder{
-  position: absolute;
-  top: 20px;right: 20px;
-  left: 20px;bottom: 20px;
+  width: var(--holder-width);
+  max-width: 100%;
+  min-width: 200px;
+  height: var(--holder-height);
+  max-height: 100%;
+  min-height: 200px;
   border-radius: 6px;
   box-shadow: 0 0 20px #000;
-  background-color:#708090;
+  background-color:#3e3e3eaa;
+  backdrop-filter: blur(8px);
   display: none;
   overflow: hidden;
+  transition: 500ms ease-in-out;
 }
+
 #Messages{width: 100%;height: 100%;overflow-y: scroll;box-sizing: border-box;}
+
 .CloseBtn{
   position: absolute;
   background-color: #c80000;
@@ -48,15 +74,98 @@ body{
   cursor: pointer;
   border-bottom: 1px solid #000;
   border-left: 1px solid #000;
+  transition: 100ms;
 }
-  
-.Message{padding: 10px;box-sizing: border-box;
-margin: 6px 0;word-wrap: break-word;
-font-family: Arial, Helvetica, sans-serif;}
-.Roleuser{background-color: #87cefa;border-radius: 0 10px 10px 0;
+
+.CloseBtn:hover{
+  transform: scale(1.4) translate(-3px,3px);
+}
+
+.Message{padding: 10px;box-sizing: border-box; transition: 500ms ease-in-out;
+margin: var(--message-gap) 0;word-wrap: break-word;
+font-family: Arial, Helvetica, sans-serif;color: white;font-size: 20px;}
+.Message:hover{box-shadow: 0 0 10px #000;}
+.Roleuser{background-color: #255c80;border-radius: 0 10px 10px 0;
 width: 95%;float: left;}
-.Roleassistant{background-color: #90ee90;border-radius: 10px 0 0 10px;
+.Roleassistant{background-color: #006666;border-radius: 10px 0 0 10px;
 width: 95%;float: right;}
 .RoleError, .Roleerror, .Rolefunction{background-color: #c80000;border-radius: 10px;
 width: 100%;float:inline-start;}
-.Rolesystem{background-color: #00bfff; margin-top: 0; padding-right: 25px; width: 100%;float: inline-start;}
+.Rolesystem{background-color: #255c80; margin-top: 0; padding-right: 25px; width: 100%;float: inline-start;}
+
+.settings{
+  position: absolute;
+  top: 20px;
+  height: 45px;
+  aspect-ratio: 1;
+  background-color: #444;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  transition: 150ms;
+  z-index: 10;
+  cursor: pointer;
+}
+.settings{right: 20px;}
+
+.settings:hover{
+  border-color: #87ceeb;
+  transform: rotateZ(90deg);
+}
+.settings:active{transform: scale(0.9);}
+
+.settingsMenu{
+  visibility: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  width: 200px;
+  background-color: #444;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  z-index: 9;
+  box-shadow: 6px 0 10px black;
+}
+
+[name=open]{visibility: visible;}
+
+.settingsContainer{
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1f;
+  gap: 6px;
+  margin: 0 8px;
+}
+
+.settingsContainer>*{
+  height: 45px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #eee;
+  cursor: pointer;
+}
+
+.settingsContainer>*::after{ content: attr(data);}
+
+*:not(.Message){
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+:root{
+  --holder-width: 400px;
+  --holder-height: calc(100% - 40px);
+  --message-gap: 6px;
+}
