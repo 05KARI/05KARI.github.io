@@ -1,0 +1,46 @@
+html {
+  --s: 88px; /* control the size*/
+  --c1: #b0b0b0;
+  --c2: #6e6e6e;
+  --c3: #8f8f8f;
+  
+  --_g: 0 120deg,#0000 0;
+  background:
+    conic-gradient(from    0deg at calc(500%/6) calc(100%/3),var(--c3) var(--_g)),
+    conic-gradient(from -120deg at calc(100%/6) calc(100%/3),var(--c2) var(--_g)),
+    conic-gradient(from  120deg at calc(100%/3) calc(500%/6),var(--c1) var(--_g)),
+    conic-gradient(from  120deg at calc(200%/3) calc(500%/6),var(--c1) var(--_g)),
+    conic-gradient(from -180deg at calc(100%/3) 50%,var(--c2)  60deg,var(--c1) var(--_g)),
+    conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
+    conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
+  background-size: calc(var(--s)*1.732) var(--s);
+
+  /* background from css-pattern.com*/
+}
+
+.pw{
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #eee;
+  background-color: #2228;
+  backdrop-filter: blur(10px);
+
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - var(--bar-width));
+  right: calc(50% - var(--bar-width));
+  bottom: calc(50% - 25px);
+}
+
+:root{
+  --bar-width: 250px;
+}
+
+@media (width<550px){
+  :root{
+    --bar-width: 45%;
+  }
+}
